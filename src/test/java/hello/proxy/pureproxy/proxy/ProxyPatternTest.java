@@ -1,5 +1,6 @@
 package hello.proxy.pureproxy.proxy;
 
+import hello.proxy.pureproxy.proxy.code.CacheProxy;
 import hello.proxy.pureproxy.proxy.code.ProxyPatternClient;
 import hello.proxy.pureproxy.proxy.code.RealSubject;
 import lombok.extern.slf4j.Slf4j;
@@ -17,5 +18,19 @@ public class ProxyPatternTest {
         client.execute();
         client.execute();
         client.execute();
+    }
+
+    @Test
+    void cacheProxyTest() {
+
+        RealSubject realSubject = new RealSubject();
+        CacheProxy cacheProxy = new CacheProxy(realSubject);
+
+        ProxyPatternClient client = new ProxyPatternClient(cacheProxy);
+
+        client.execute();
+        client.execute();
+        client.execute();
+
     }
 }
