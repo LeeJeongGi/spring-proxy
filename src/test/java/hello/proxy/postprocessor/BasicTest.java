@@ -37,7 +37,6 @@ public class BasicTest {
         }
 
     }
-
     @Slf4j
     static class A {
         public void helloA() {
