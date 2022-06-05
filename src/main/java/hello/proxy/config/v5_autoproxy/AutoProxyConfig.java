@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Import;
 @Import({AppV1Config.class, AppV2Config.class})
 public class AutoProxyConfig {
 
-    @Bean
+//    @Bean
     public Advisor advisor1(LogTrace logTrace) {
 
         NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
@@ -39,7 +39,7 @@ public class AutoProxyConfig {
         return new DefaultPointcutAdvisor(pointcut, advice);
     }
 
-    @Bean
+//    @Bean
     public Advisor advisor3(LogTrace logTrace) {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
 
